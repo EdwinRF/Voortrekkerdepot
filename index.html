@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html ng-app="depotStore">
+	<head>
+		<title>
+			Voortrekkerdepot
+		</title>
+		<link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<script type="text/javascript" src="angular.min.js"></script>
+		<script type="text/javascript" src="app.js"></script>
+	</head>
+	<body ng-controller="StoreController as store">
+		<header>
+			<form class="pull-right frmIn" ng-hide="store.signedIn" ng-submit="store.signIn(store.user, store.pass)">
+				<input ng-model="store.user" type="text" class="form-control" placeholder="Gebruikersnaam" title="Gebruikersnaam" />
+				<input ng-model="store.pass" type="password" class="form-control" placeholder="Wagwoord" title="Wagwoord" />
+				<input type="submit" class="form-control" title="Teken In" value="Teken In" />
+			</form>
+			<form class="pull-right frmOut" ng-show="store.signedIn" ng-submit="store.signOut()">
+				<input type="submit" class="form-control" title="Teken Uit" value="Teken Uit" />
+			</form>
+			<img src="images/header.png" style="float:left">
+			<h1 class="opskrif">Voortrekkerdepot</h1>
+			<ul class="nav nav-pills">
+				<li ng-class="{ active:store.isSet(1) }">
+					<a href ng-click="store.setTab(1)">Hoof Menu</a>
+				</li>
+				<li ng-hide="store.signedIn" ng-class="{ active:store.isSet(2) }">
+					<a href ng-click="store.setTab(2)">Registreer</a>
+				</li>
+				<li ng-show="store.isAdmin" ng-class="{ active:store.isSet(3) }">
+					<a href ng-click="store.setTab(3)">Admin</a>
+				</li>
+				<li ng-show="store.signedIn" ng-class="{ active:store.isSet(4) }">
+					<a href ng-click="store.setTab(4)">Mandjie ({{store.cartTotal | currency:"R"}})</a>
+				</li>
+			</ul>
+			<div class="hr"></div>
+		</header>
+
+		<div name="MainMenu" ng-show="store.isSet(1)">
+			<input ng-model="store.search" type="search" class="form-control" placeholder="Soek" title="Soek vir 'n spesifieke woord of getal." />
+			<div class="prodDisp">
+				<div class="cols">
+					<div class="mainItem" ng-repeat="item in store.products | filter: store.search">
+						<img ng-src="{{item.image}}" class="itemImage">
+						<p><b>{{item.name}}</b></p>
+						<p>{{item.description}}</p>
+						<p style="float:left"><b>{{item.price | currency:"R"}}</b></p>
+						<button ng-show="store.signedIn" ng-click="store.addToCart(item)" class="btn btn-primary pull-right">Koop</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div name="CheckoutMenu" ng-show="store.isSet(4)">
+			<h3 class="text-center">
+				<b>Totaal: {{store.cartTotal | currency:"R"}}</b>
+				<button class="btn btn-primary">Finaliseer</button>
+			</h3>
+			<div class="prodDisp">
+				<div class="cols">
+					<div class="mainItem" ng-repeat="item in store.cart">
+						<img ng-src="{{item.image}}" class="itemImage">
+						<p><b>{{item.name}}</b></p>
+						<p>{{item.description}}</p>
+						<p style="float:left"><b>{{item.price | currency:"R"}} x {{store.amount[$index]}}</b></p>
+						<button ng-click="store.removeFromCart(item)" class="btn btn-primary pull-right remove">Verwyder</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div name="Register" ng-show="store.isSet(2)">
+			<button ng-click="store.signIn('User','User')" class="btn">Teken In as Gas</button>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,10 @@
+<div ng-show="product.images.length">
+  <div class="img-wrap">
+    <img class="img-big" ng-src="{{product.images[gallery.current]}}" />
+  </div>
+  <ul class="img-thumbnails clearfix" ng-init="num = 0">
+    <li class="small-image pull-left thumbnail img-small" ng-repeat="image in product.images">
+      <img ng-src="{{image}}" ng-click="gallery.setCurrent($index)" class="clickable" />
+    </li>
+  </ul>
+</div>

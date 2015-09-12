@@ -1,0 +1,74 @@
+[
+	{
+		"name": "Garing",
+		"description": "Sterk garing wat gebruik kan word om enige iets te doen van naaldwerk doen tot kralletjie hangertjies maak.",
+		"price": 32.5,
+		"image": "images/garing.jpg"
+	}, 
+	{
+		"name": "Gom",
+		"description": "Hiermee kan jy amper plak net wat jy wil, en dis veilig vir jong mense om mee te werk.",
+		"price": 22.9,
+		"image": "images/gom.jpg"
+	}, 
+	{
+		"name": "Koukies",
+		"description": "Van inkleur tot net lekker prentjies teken. Hierdie kleurvolle stel koukies is net wat jy nodig het.",
+		"price": 65,
+		"image": "images/koukies.jpg"
+	}, 
+	{
+		"name": "Kralletjies (Groot)",
+		"description": "Want groter is altyd beter as dit by kralletjie hangertjies en armbande kom.",
+		"price": 40,
+		"image": "images/kralletjies_groot.jpg"
+	}, 
+	{
+		"name": "Kralletjies (Klein)",
+		"description": "Wie se dat jy nie 'n mooi klein en fyn hangertjie of armband kan maak nie.",
+		"price": 23.5,
+		"image": "images/kralletjies_klein.jpg"
+	}, 
+	{
+		"name": "Gekleurde Papier",
+		"description": "'n Stel kleurvolle papiere wat vir enige projekte kan gebruik word.",
+		"price": 100,
+		"image": "images/papier.jpg"
+	}, 
+	{
+		"name": "PD Handleiding",
+		"description": "Die offisieele handleiding vir Penkop en Drawwertjie Offisiere in die Voortrekkers.",
+		"price": 350,
+		"image": "images/pd_handleiding.jpg"
+	}, 
+	{
+		"name": "Inkleur Potlode",
+		"description": "Hoe anders moet jy kleur in al jou kunswerke sit?",
+		"price": 66.95,
+		"image": "images/potlode.jpg"
+	}, 
+	{
+		"name": "Praktiese Handleiding",
+		"description": "Die moet-he handleiding vir offisiere wat bietjie sukkel om die span byeenkomste te reel en beplan.",
+		"price": 520,
+		"image": "images/prak_handleiding.png"
+	}, 
+	{
+		"name": "Sakrekenaar",
+		"description": "Almal is nie ewe goed met somme nie. En hierdie sakrekenaar gaan jou help as jy sukkel.",
+		"price": 154.9,
+		"image": "images/sakrekenaar.jpg"
+	}, 
+	{
+		"name": "Sker",
+		"description": "'n Veilige sker wat kinders ook kan gebruik.",
+		"price": 12.5,
+		"image": "images/sker.jpg"
+	}, 
+	{
+		"name": "Voorslag Wapen",
+		"description": "As jy hard gewerk het en het die voorslag toetse deur gekom, kan jy so een bestel en hom op jou onderbaadjie vaswerk.",
+		"price": 4.5,
+		"image": "images/voorslag.jpg"
+	}
+]
